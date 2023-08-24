@@ -19,12 +19,19 @@ public class ListSorter {
 
         pairsForSorting.sort(comparator.thenComparing(new ListComparatorForDuplicates()));
 
-        List<String> sortedList = new ArrayList<>();
-        for (String[] e : pairsForSorting) {
-            sortedList.add(e[0]);
+        for (int i = 0; i < sourceList.size(); i++) {
+            System.out.print(sourceList.get(i) + "  ------  ");
+            sourceList.set(i, (pairsForSorting.get(i)[0]));
+            System.out.println(sourceList.get(i));
+
         }
-        sourceList = sortedList;
-        System.out.println(sourceList);
+
+//        sourceList = new ArrayList<>();
+//        for (String[] e : pairsForSorting) {
+//            sourceList.add(e[0]);
+//        }
+////        sourceList = sortedList;
+//        System.out.println(sourceList);
     }
 
     private List<String> getResultsOfFunction(List<String> sourceList) {
